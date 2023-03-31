@@ -30,8 +30,17 @@ export default function PlayerSelection({ navigation, route }) {
  
   // Function to handle the "Next" button press
   function handleNext() {
-    navigation.navigate("Round", { numPlayers: parseInt(numPlayers, 10), playerNames: playerNames });
-  }
+  const updatedPlayerList = playerNames.map((name, index) => ({
+    id: index,
+    name,
+    score: 0,
+  }));
+  navigation.navigate("Round", {
+    players: updatedPlayerList,
+    numPlayers: parseInt(numPlayers, 10),
+   
+  });
+}
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Enter the player names</Text>

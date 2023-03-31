@@ -6,7 +6,7 @@ export default function PlayerSelect({ navigation }) {
 
   function handleNext() {
     // Navigate to the next screen and pass the number of players as a parameter
-    navigation.navigate("Game", { numPlayers: parseInt(numPlayers) });
+    navigation.navigate("Name", { numPlayers: parseInt(numPlayers) });
   }
 
   return (
